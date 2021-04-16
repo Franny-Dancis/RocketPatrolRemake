@@ -179,4 +179,13 @@ class Play extends Phaser.Scene{
         this.sound.play('sfx_explosion');
         this.clock += 1000;  
       }
+
+    // Added speed up mechanic
+    speedUpShips(){
+        if (this.clock = 3000) {
+            game.settings = {
+                spaceshipSpeed: 5
+            }
+        }
+    }
 }
