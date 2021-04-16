@@ -8,10 +8,15 @@ class Play extends Phaser.Scene{
         this.load.image("rocket", "assets/rocket.png");
         this.load.image("spaceship", "assets/spaceship.png");
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
-        this.load.audio('bgMusic', 'assets/some_sad_song.mp3');
     }
 
     create(){
+
+        // set variables for easy access to audio later
+        let explosion1 = this.sound.add('explosionSound1');
+        let explosion2 = this.sound.add('explosionSound2');
+        let explosion3 = this.sound.add('explosionSound3');
+        let explosion4 = this.sound.add('explosionSound4');
 
         // play music
         let backgroundMusic = this.sound.add('bgMusic');
@@ -96,7 +101,7 @@ class Play extends Phaser.Scene{
             },
             fixedWidth: 100
         }
-        this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding * 2, this.p1Score, scoreConfig);
+        this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig);
 
         // GAME OVER flag
         this.gameOver = false;
@@ -176,7 +181,8 @@ class Play extends Phaser.Scene{
         // score add and repaint
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;  
-        this.sound.play('sfx_explosion');
+        // randomize explosion sound
+        this.sound.play(Phaser.Math.RND.pick(['explosionSound1', 'explosionSound2', 'explosionSound3', 'explosionSound4']));
         this.clock += 1000;  
       }
 
