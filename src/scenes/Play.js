@@ -12,6 +12,17 @@ class Play extends Phaser.Scene{
 
     create(){
 
+        
+        // Mouse controls
+        this.input.on('pointermove', function (pointer) {
+            this.p1Rocket.x = pointer.x
+        }, this);
+
+        this.input.on('pointerdown', function (pointer) {
+            this.p1Rocket.isFiring = true
+            console.log(this.p1Rocket.isFiring)
+        }, this);
+
         // set variables for easy access to audio later
         let explosion1 = this.sound.add('explosionSound1');
         let explosion2 = this.sound.add('explosionSound2');
