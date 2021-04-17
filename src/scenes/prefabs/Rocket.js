@@ -29,6 +29,7 @@ class Rocket extends Phaser.GameObjects.Sprite {
                 this.isFiring = true;
                 this.sfxRocket.play();  // play sfx
             }
+            
         }
         
         // Movement Clamp

@@ -20,7 +20,7 @@ class Play extends Phaser.Scene{
 
         this.input.on('pointerdown', function (pointer) {
             this.p1Rocket.isFiring = true
-            console.log(this.p1Rocket.isFiring)
+            this.p1Rocket.sfxRocket.play()
         }, this);
 
         // set variables for easy access to audio later
@@ -87,6 +87,7 @@ class Play extends Phaser.Scene{
         // keyboard input
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
+        keyP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
@@ -128,7 +129,7 @@ class Play extends Phaser.Scene{
     }    
 
     update() {
-          // check key input for restart
+        // check key input for restart
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
             this.scene.restart();
         }
@@ -191,11 +192,11 @@ class Play extends Phaser.Scene{
         });
         // score add and repaint
         this.p1Score += ship.points;
-        this.scoreLeft.text = this.p1Score;  
+        this.scoreLeft.text = this.p1Score;       
         // randomize explosion sound
         this.sound.play(Phaser.Math.RND.pick(['explosionSound1', 'explosionSound2', 'explosionSound3', 'explosionSound4']));
         this.clock += 1000;  
-      }
+    } 
 
     // Added speed up mechanic
     speedUpShips(){
