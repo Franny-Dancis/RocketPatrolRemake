@@ -5,6 +5,7 @@ class Play extends Phaser.Scene{
 
     preload() {
         this.load.image("starfield", "assets/starfield.png");
+        this.load.image("paperBackground", "assets/paperBackground.png");
         this.load.image("rocket", "assets/rocket.png");
         this.load.image("spaceship", "assets/spaceship.png");
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
@@ -33,9 +34,9 @@ class Play extends Phaser.Scene{
         let backgroundMusic = this.sound.add('bgMusic');
         backgroundMusic.play()
 
-        // starfield
-        this.starfield = this.add.tileSprite(
-            0,0,640,480, 'starfield', 
+        // paperBackground
+        this.paperBackground = this.add.tileSprite(
+            0,0,640,480, 'paperBackground', 
         ).setOrigin(0,0);
 
         // rocket objects
@@ -137,7 +138,7 @@ class Play extends Phaser.Scene{
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             this.scene.start("menuScene");
         }
-        this.starfield.tilePositionX += 4;
+        this.paperBackground.tilePositionX += 4;
 
         this.p1Rocket.update();
         this.ship1.update();

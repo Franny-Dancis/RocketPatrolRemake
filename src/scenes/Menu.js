@@ -12,7 +12,7 @@ class Menu extends Phaser.Scene {
         this.load.audio('explosionSound2', '/assets/pew2.ogg');
         this.load.audio('explosionSound3', '/assets/pew3.ogg');
         this.load.audio('explosionSound4', '/assets/pew4.ogg');
-        this.load.audio('bgMusic', 'assets/some_sad_song.mp3');
+        this.load.audio('bgMusic', 'assets/some_sad_song.ogg');
         this.load.audio('fireSFX', 'assets/shootSound.ogg');
       }
 
