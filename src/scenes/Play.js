@@ -192,7 +192,7 @@ class Play extends Phaser.Scene{
           boom.destroy();                     // remove explosion sprite
         });
         // score add and repaint
-        this.p1Score += ship.points;
+        this.p1Score += 1;
         this.scoreLeft.text = this.p1Score;       
         // randomize explosion sound
         this.sound.play(Phaser.Math.RND.pick(['explosionSound1', 'explosionSound2', 'explosionSound3', 'explosionSound4']));
