@@ -27,9 +27,8 @@ class Instructions extends Phaser.Scene {
         this.add.text(game.config.width/2, game.config.height/2, 'Killing an ENEMY adds 1 second' , menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
-        this.add.text(game.config.width/2, game.config.height/2 + 50, 'Hold (F) for the LASER GUN' , menuConfig).setOrigin(0.5);
-        this.add.text(game.config.width/2, game.config.height/2 + 100, 'Tap (F) for the DEFAULT GUN' , menuConfig).setOrigin(0.5);
-        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding + 100, 'Press <- for Novice or -> for Expert', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 + 50, 'Tap (F) for the DEFAULT GUN' , menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding + 50, 'Press <- for Novice or -> for Expert', menuConfig).setOrigin(0.5);
 
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
